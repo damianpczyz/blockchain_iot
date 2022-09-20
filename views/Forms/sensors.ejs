@@ -1,0 +1,95 @@
+
+  <%- contentFor('HeaderCss') %>
+
+  <!-- perticular page css -->
+     <!-- Plugins css -->
+     <link href="public/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+     <link href="public/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
+     <link href="public/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+     <link href="public/plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+  <%- contentFor('body') %>
+
+  <div class="wrapper">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-6">
+                <div class="card m-b-20">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title">Sensor</h4>
+
+                            <div class="m-t-20">
+                                <label class="text-muted">Device name</label>
+                                <p class="text-muted m-b-5 "> <%= locals.name %></p>
+                            </div>
+                            <div class="m-t-20">
+                                <label class="text-muted">Refresh time</label>
+                                <p class="text-muted m-b-5 "> <%= locals.duration %></p>
+                            </div>
+                            <div class="m-t-20">
+                                <label class="text-muted">Battery</label>
+                                <p class="text-muted m-b-5 "> <%= locals.battery %></p>
+                            </div>
+                            <div class="m-t-20">
+                                <label class="text-muted">Is On</label>
+
+                                <p class="text-muted m-b-5 ">
+                                    <% if(locals.on){ %>
+                                        <span style="color:green"> Sensor is ON </span>
+                                     <% }else{ %>
+                                         <span style="color:red"> Sensor is OFF</span>
+                                     <%} %>
+                                </p>
+                            </div>
+                            <div class="m-t-20">
+                                <label class="text-muted">Rechable</label>
+                                <p class="text-muted m-b-5 ">
+                                    <% if(locals.reachable){ %>
+                                        <span style="color:green"> Sensor is rechable </span>
+                                     <% }else{ %>
+                                         <span style="color:red"> Sensor is not rechable</span>
+                                     <%} %>
+                                </p>
+                            </div>
+                           
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card m-b-20">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title">Sensor</h4>
+
+                            <div class="m-t-20">
+                                <label class="text-muted">Sensor spotted motion</label>
+                                <p class="text-muted m-b-5 ">
+                                    <% if(locals.presence){ %>
+                                       <span style="color:red"> MOTION DETECTED </span>
+                                    <% }else{ %>
+                                        <span style="color:green"> MOTION NOT DETECTED </span>
+                                    <%} %>
+                                </p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+        <script>
+            $('#datetimepicker').datetimepicker({
+                format: 'hh:mm:ss a'
+            });
+        </script> 
+    </div> 
+</div>
+
+<%- contentFor('FooterJs') %>
+
+  <!-- Plugins js -->
+  <script src="public/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+  <script src="public/plugins/select2/js/select2.min.js"></script>
+  <script src="public/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+  <script src="public/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js"></script>
+  <script src="public/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js"></script>
+

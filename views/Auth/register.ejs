@@ -1,0 +1,46 @@
+
+ <% include ../Partials/HeaderRoot  %>
+
+      <div class="wrapper-page">
+        <div class="card">
+            <p></p><p></p><p></p><p></p>
+            <div class="card-body">
+                <form class="form-horizontal m-t-30" action="/registerAccount" method="POST">
+                <div class="p-3">
+                    
+                    <h4 class="text-muted font-18 m-b-5 text-center">Contact Administrator for Your Blockchain Account</h4>
+                    <form class="form-horizontal m-t-30" action="registerAccount" method="">
+
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Enter username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="blockchain_account">Blockchain Account Id</label>
+                            <input type="text" class="form-control" id="account_id" name="accountId" placeholder="Enter Account Id">
+                        </div>
+
+                        <div class="form-group row m-t-20">
+                            <div class="col-12 text-right">
+                                <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </form>
+        </div>
+
+        <div class="m-t-40 text-center">
+            <p>Already have an account ? <a href="login" class=" text-primary"> Login </a> </p>
+        </div>
+    </div>
+
+    <% include ../Partials/FooterRoot  %>

@@ -1,0 +1,133 @@
+
+  <%- contentFor('HeaderCss') %>
+
+  <!-- perticular page css -->
+     <!-- Plugins css -->
+     <link href="public/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+     <link href="public/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
+     <link href="public/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+     <link href="public/plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+  <%- contentFor('body') %>
+
+  <div class="wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card m-b-20">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title">Modify light state</h4>
+                        <form class="form-horizontal m-t-30" action="/api/modify/1" method="POST" autocomplete="off">
+
+                            <div class="m-t-20">
+                                <label class="text-muted">Switch Light On/Off</label>
+                                <p class="text-muted m-b-5 ">
+                                </p>
+                                <input type="checkbox" name="on" id="switch3" switch="bool" />
+                                <label for="switch3" data-on-label="On" data-off-label="Off"></label>
+                            </div>
+
+                            <div class="m-t-20">
+                                <label class="text-muted">Brightness</label>
+                                <p class="text-muted m-b-5 ">
+                                </p>
+                                <input type="range" min="1" max="255" value="<%= locals.bri %>" class="slider" name ="bri" maxlength="500">
+                            </div>
+
+                            <div class="m-t-20">
+                                <label class="text-muted">Temperature</label>
+                                <p class="text-muted m-b-15 ">
+                                    ..........................................
+                                </p>
+                                <input type="range" min="1" max="10000" value="50" class="slider" name="temp_range" maxlength="25">
+                            </div>
+
+                            <div class="m-t-20">
+                                <label class="text-muted">Color</label>
+                                <p class="text-muted m-b-15 ">
+                                    ..........................................
+                                </p>
+                                <input type="range" min="1" max="65535" value="<%= locals.hue %>" class="slider" name="hue">
+                            </div>
+
+                            <div class="m-t-20">
+                                <label class="text-muted">Saturation</label>
+                                <p class="text-muted m-b-15 "> </p>
+                                <input type="range" min="1" max="255" value="<%= locals.sat %>" class="slider" name="sat"><br/><br/>
+                                <button class="btn btn-primary w-md waves-effect waves-light" type="submit">submit</button>
+                            </div>
+                        </form>    
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card m-b-20">
+                    <div class="card-body">
+
+                        <h4 class="mt-0 header-title">Select the time when you want the light to be ON</h4>
+
+                            <div class="form-group">
+                                <form class="form-horizontal m-t-30" action="/setLightOnTime" method="POST" autocomplete="off">
+
+                                    <div class="m-t-20">
+                                        <label class="text-muted">Start</label>
+                                        <p class="text-muted m-b-15 "> </p>
+                                        <input type='text' class="timepicker" name="start" id="start" />
+                                    </div>
+
+                                    <div class="m-t-20">
+                                        <label class="text-muted">Stop</label>
+                                        <p class="text-muted m-b-15 "> </p>
+                                        <input type='text' class="timepicker" name="stop" id="stop" />
+                                    </div>
+                                    <div class="m-t-20">
+                                        <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Submit</button>
+                                    </div>
+                                </form>
+                                </div>
+                             </div>
+                    </div>
+
+                    <div class="card m-b-20">
+                        <div class="card-body">
+    
+                            <h4 class="mt-0 header-title">Turn on the light when the sensor detects motion.</h4>
+    
+                                <div class="form-group">
+                                    <form class="form-horizontal m-t-30" action="/setLightOnSensor" method="POST" autocomplete="off">
+    
+                                        <div class="m-t-20">
+                                            <input type="checkbox" name="sensorOn" id="forSensor" switch="bool" />
+                                            <label for="forSensor" data-on-label="On" data-off-label="Off"></label>
+                                        </div>
+                                        <div class="m-t-20">
+                                            <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Submit</button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                 </div>
+                        </div>
+
+
+                </div>
+
+            </div>
+        </div> 
+        <script>
+            $('#datetimepicker').datetimepicker({
+                format: 'hh:mm:ss a'
+            });
+        </script> 
+    </div> 
+</div>
+
+<%- contentFor('FooterJs') %>
+
+  <!-- Plugins js -->
+  <script src="public/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+  <script src="public/plugins/select2/js/select2.min.js"></script>
+  <script src="public/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+  <script src="public/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js"></script>
+  <script src="public/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js"></script>
+
